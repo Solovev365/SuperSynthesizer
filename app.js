@@ -16,11 +16,8 @@ function playSound(event) {
 
     catHand ? catHandEl.classList.add('hide-cat') : catHandEl.classList.remove('hide-cat')
 
-    if (event.target.dataset.key) {
-        index = keyCodeFromBoard.indexOf(Number(event.target.dataset.key))
-    } else if (event.keyCode) {
-        index = keyCodeFromBoard.indexOf(event.keyCode)
-    }
+    event.target.dataset.key ? index = keyCodeFromBoard.indexOf(Number(event.target.dataset.key)) : index = keyCodeFromBoard.indexOf(event.keyCode)
+
     soudPlay(index)
 }
 
